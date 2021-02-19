@@ -1,0 +1,14 @@
+*.vs
+ShootingGalleryGame/Library/*
+ShootingGalleryGame/Temp/*
+ShootingGalleryGame/Assembly-CSharp-Editor.csproj
+ShootingGalleryGame/Assembly-CSharp-firstpass.csproj
+ShootingGalleryGame/Assembly-CSharp.csproj
+ShootingGalleryGame/ColyseusArena-Plugin.sln
+ShootingGalleryGame/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache
+ShootingGalleryGame/obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache
+ShootingGalleryGame/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+ShootingGalleryGame/.vs/
+ShootingGalleryGame/obj/
+ShootingGalleryGame/Build/
+*.sln

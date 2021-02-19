@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1612038803363615649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612038803363615648}
+  - component: {fileID: 1612038803363615655}
+  m_Layer: 0
+  m_Name: TargetController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612038803363615648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612038803363615649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612038803363615655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612038803363615649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57891eb082cffa8488735894a859c106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTarget: {fileID: 8153336297323445683, guid: 46267323c67987d4aa6222c54faa74a9,
+    type: 3}
+  potentialTargets:
+  - id: 1
+    prefab: {fileID: 8153336297323445683, guid: 46267323c67987d4aa6222c54faa74a9,
+      type: 3}
+  - id: 2
+    prefab: {fileID: 8153336297323445683, guid: d2c6b6edc17fbc341936fac1b1510f72,
+      type: 3}
+  - id: 3
+    prefab: {fileID: 8153336297323445683, guid: 96315b6957bc6a843a6707eb59c4f3ea,
+      type: 3}
+  - id: 4
+    prefab: {fileID: 2197201938780728491, guid: 2cfde88e9b79b354787176b714801e73,
+      type: 3}
+  - id: 5
+    prefab: {fileID: 2197201938780728491, guid: f8fd6ad8fd88c27468e4741e511d9b12,
+      type: 3}
+  - id: 6
+    prefab: {fileID: 8452794941058386261, guid: dd7e84915598e8f4091894291cae8e48,
+      type: 3}
+  targetHolder: {fileID: 0}
+  trackedTargets: []
