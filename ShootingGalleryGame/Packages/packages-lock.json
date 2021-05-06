@@ -66,6 +66,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "io.colyseus.sdk": {
+      "version": "https://github.com/Lucid-Sight-Inc/colyseus-unity3d.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7dbf2becb2139c9a8d10ff23374273865486a01e"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

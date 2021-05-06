@@ -222,7 +222,7 @@ public class GalleryGameManager : MonoBehaviour
         }
     }
 
-    private void OnRoomStateChanged(ColyseusMapSchema<string> attributes)
+    private void OnRoomStateChanged(MapSchema<string> attributes)
     {
         if (_showCountdown && attributes.ContainsKey("countDown"))
         {
@@ -292,7 +292,7 @@ public class GalleryGameManager : MonoBehaviour
         }
     }
 
-    private void OnUserStateChanged(ColyseusMapSchema<string> attributeChanges)
+    private void OnUserStateChanged(MapSchema<string> attributeChanges)
     {
         if (attributeChanges.TryGetValue("readyState", out string readyState))
         {
