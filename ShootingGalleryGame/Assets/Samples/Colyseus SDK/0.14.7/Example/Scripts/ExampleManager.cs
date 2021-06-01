@@ -92,9 +92,9 @@ public class ExampleManager : ColyseusManager<ExampleManager>
         // and allow the app to run in the background for continuous testing.
         Application.targetFrameRate = 60;
         Application.runInBackground = true;
-        // Immediately connect to the game server
+        // Immediately initialize the client
         // Note: we're only doing so for this example and your requirements may differ.
-        ConnectToServer();
+        InitializeClient();
     }
 
     public void Initialize(string roomName, Dictionary<string, object> roomOptions)
@@ -117,9 +117,9 @@ public class ExampleManager : ColyseusManager<ExampleManager>
     /// <summary>
     ///     Connect to the Colyseus server and either join or create a room.
     /// </summary>
-    protected override void ConnectToServer()
+    public override void InitializeClient()
     {
-        base.ConnectToServer();
+        base.InitializeClient();
 
         _roomController.SetClient(client);
         if (autoJoinRoom)
