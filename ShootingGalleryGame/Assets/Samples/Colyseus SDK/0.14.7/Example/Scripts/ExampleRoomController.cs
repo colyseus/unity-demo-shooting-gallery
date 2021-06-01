@@ -248,7 +248,7 @@ public class ExampleRoomController
     {
         _colyseusSettings = settings;
 
-        ColyseusClient.onAddRoom += OnAddRoom;
+        ColyseusClient.onAddRoom += AddRoom;
     }
 
     public void SetRoomOptions(Dictionary<string, object> options)
@@ -275,25 +275,15 @@ public class ExampleRoomController
     }
 
     /// <summary>
-    ///     Handler for the <see cref="ColyseusClient.onAddRoom" /> event.
-    /// </summary>
-    /// <param name="roomToAdd"></param>
-    private void OnAddRoom(IColyseusRoom roomToAdd)
-    {
-        _ = AddRoom(roomToAdd);
-    }
-
-    /// <summary>
     ///     Adds the given room to <see cref="rooms" /> and
     ///     initiates its connection to the server.
     /// </summary>
     /// <param name="roomToAdd"></param>
     /// <returns></returns>
-    public async Task AddRoom(IColyseusRoom roomToAdd)
+    public void AddRoom(IColyseusRoom roomToAdd)
     {
         roomToAdd.OnLeave += code => { rooms.Remove(roomToAdd); };
         rooms.Add(roomToAdd);
-        await roomToAdd.Connect();
     }
 
     /// <summary>
@@ -448,14 +438,15 @@ public class ExampleRoomController
         _room.colyseusConnection.OnClose += Room_OnClose;
     }
 
-    private void OnLeaveRoom(WebSocketCloseCode code)
+    private void OnLeaveRoom(int code)
     {
-        LSLog.Log("ROOM: ON LEAVE =- Reason: " + code);
+        WebSocketCloseCode closeCode = WebSocketHelpers.ParseCloseCodeEnum(code);
+        LSLog.Log(string.Format("ROOM: ON LEAVE =- Reason: {0} ({1})",closeCode, code));
         _pingThread.Abort();
         _pingThread = null;
         _room = null;
 
-        if (code != WebSocketCloseCode.Normal && !string.IsNullOrEmpty(_lastRoomId))
+        if (closeCode != WebSocketCloseCode.Normal && !string.IsNullOrEmpty(_lastRoomId))
         {
             JoinRoomId(_lastRoomId);
         }
@@ -629,7 +620,7 @@ public class ExampleRoomController
     ///     Callback for when the room's connection closes.
     /// </summary>
     /// <param name="closeCode">Code reason for the connection close.</param>
-    private static void Room_OnClose(WebSocketCloseCode closeCode)
+    private static void Room_OnClose(int closeCode)
     {
         LSLog.LogError("Room_OnClose: " + closeCode);
     }
